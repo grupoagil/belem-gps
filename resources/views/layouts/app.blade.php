@@ -19,6 +19,7 @@
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
+    @stack('css')
     <style>
         .guest-navbar .navbar-toggler-icon.icon-bar {
             background: #fff !important;
@@ -177,6 +178,34 @@
     <script src="{{ asset('material') }}/demo/demo.js"></script>
     <script src="{{ asset('material') }}/js/settings.js"></script>
     @stack('js')
+    {{-- Notificacoes --}}
+    @if(Session::has('sucesso'))
+        <script>
+            Swal.fire(
+                'Sucesso!',
+                '{{ Session::get('sucesso') }}',
+                'success'
+            )
+        </script>
+    @endif
+    @if(Session::has('falha'))
+        <script>
+            Swal.fire(
+                'Falhou!',
+                '{{ Session::get('falha') }}',
+                'error'
+            )
+        </script>
+    @endif
+    <script>
+        function funcionalidadeNaoHabilitada(){
+            Swal.fire(
+                'Não disponível',
+                'Essa funcionalidade ainda está sendo implementada pelo desenvolvimento!',
+                'error'
+            )
+        }
+    </script>
 </body>
 
 </html>

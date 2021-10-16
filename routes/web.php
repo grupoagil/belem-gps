@@ -57,5 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+	Route::post('registro', 'UserController@registro')->name('user.registro');
+	Route::post('update', 'UserController@update')->name('user.update');
+	Route::get('delete/{id}','UserController@delete')->name('user.delete');
 });
-
