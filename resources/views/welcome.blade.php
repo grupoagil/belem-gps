@@ -166,7 +166,7 @@
                 </div>
               </div>
               <div class="row justify-content-between align-items-center footer-main3">
-                  <a href="" class="more-products">mais produtos</a>
+                  <a href="{{route('produtos')}}" class="more-products">mais produtos</a>
                   {{-- <ul class="pagination pagination-gps align-items-center">
                       <a data-target="#multi-item" data-slide-to="0" class="active"><li></li></a>
                       <a data-target="#multi-item" data-slide-to="1"><li></li></a>
