@@ -16,9 +16,7 @@ Auth::routes();
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', 'PublicController@index');
 
 Route::get('/home', 'HomeController@index')->name('admin.home')->middleware('auth');
 
