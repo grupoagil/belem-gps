@@ -17,11 +17,14 @@ Auth::routes();
 */
 
 Route::get('/', 'PublicController@index');
+Route::get('produtos', 'PublicController@produtos');
 
-Route::get('/home', 'HomeController@index')->name('admin.home')->middleware('auth');
 
-Route::group(['middleware' => 'auth'], function () {
-	Route::get('produtos','ProdutosController@index')->name('admin.produtos');
+Route::group(['prefix' => 'admin'], function () {
+	Route::group(['middleware' => 'auth'], function () {
+		Route::get('/home', 'HomeController@index')->name('admin.home');
+		Route::get('produtos','ProdutosController@index')->name('admin.produtos');
+	});
 });
 
 Route::group(['middleware' => 'auth'], function () {
