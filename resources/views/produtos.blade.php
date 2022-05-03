@@ -23,7 +23,7 @@
                         </div>
                         <div class="row">
                             <figure class="figure">
-                                <img src="{{asset('bootstrap/assets')}}/img/gps.svg" alt="GPS" class="img-fluid">
+                                <img src="{{$item['PROD_IMAGE']}}" alt="GPS" class="img-fluid">
                                 <figcaption>{{$item['PROD_NOME']}}</figcaption>
                             </figure>
                         </div>
