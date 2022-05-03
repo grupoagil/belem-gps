@@ -61,12 +61,14 @@
             Swal.fire({
                 title: 'Escolha onde comprar',
                 showCancelButton: true,
+                showDenyButton: true,
                 confirmButtonText: (desconto != 0)?'Cielo (-'+desconto+'% Desconto)':'Cielo',
-                cancelButtonText: (desconto != 0)?'Magalu (Sem Desconto)':'Magalu',
+                denyButtonText: (desconto != 0)?'Magalu (Sem Desconto)':'Magalu',
+                cancelButtonText: 'Fechar'
             }).then((result) => {
-                if (result.value) {
+                if (result.isConfirmed) {
                     window.location.href = cielo;
-                } else {
+                } else if (result.isDenied) {
                     window.location.href = magalu;
                 }
             })
