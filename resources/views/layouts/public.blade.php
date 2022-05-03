@@ -144,7 +144,7 @@
     <script type="text/javascript" src="{{asset('bootstrap/assets')}}/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="{{asset('bootstrap/assets')}}/js/bootstrap.bundle.min.js"></script>
     <!--  Plugin for Sweet Alert -->
-    <script src="{{ asset('material') }}/js/plugins/sweetalert2.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('bootstrap/assets')}}/js/script.js"></script>
     @stack('js')
   </body>
