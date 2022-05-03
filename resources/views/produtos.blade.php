@@ -23,7 +23,7 @@
                         </div>
                         <div class="row">
                             <figure class="figure">
-                                <img src="{{$item['PROD_IMAGE']}}" alt="GPS" class="img-fluid">
+                                <img src="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}" alt="GPS" class="img-fluid">
                                 <figcaption>{{$item['PROD_NOME']}}</figcaption>
                             </figure>
                         </div>
