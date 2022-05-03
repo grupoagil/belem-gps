@@ -59,8 +59,8 @@ class ProdutosController extends Controller
       // Apagar produto 
       Storage::delete($produto->PROD_IMAGE);
       // Salvar novo produto
-      $array['PROD_IMAGE'] = $path;
       $path = $request->file('PROD_IMAGE')->store('public/produtos');
+      $array['PROD_IMAGE'] = $path;
     }
     $array['PROD_VALOR'] = str_replace(['.',','],['','.'],$array['PROD_VALOR']);
     $produto->update($array);
