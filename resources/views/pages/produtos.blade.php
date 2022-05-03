@@ -66,26 +66,32 @@
                   <th class="text-right">Opções</th>
                 </thead>
                 <tbody>
-                  @foreach ($produtos as $item)
-                    <tr>
-                      <td>{{$item->id}}</td>
-                      <td>{{$item->PROD_NOME}}</td>
-                      <td>{{$item->PROD_DESCRICAO}}</td>
-                      <td>{{$item->PROD_VALOR}}</td>
-                      <td>{{$item->PROD_DESCONTO_CIELO}}</td>
-                      <td class="text-right">
-                        <div class="dropdown">
-                          <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Opções
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalProdutos" data-isCreate="0" data-json="{{json_encode($item)}}">Editar</a>
-                            <a class="dropdown-item" href="#">Apagar</a>
+                  @if ($produtos == "[]")
+                      <tr>
+                        <td colspan="6" class="text-center">Sem Produtos</td>
+                      </tr>
+                  @else
+                    @foreach ($produtos as $item)
+                      <tr>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->PROD_NOME}}</td>
+                        <td>{{$item->PROD_DESCRICAO}}</td>
+                        <td>{{$item->PROD_VALOR}}</td>
+                        <td>{{$item->PROD_DESCONTO_CIELO}}</td>
+                        <td class="text-right">
+                          <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Opções
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalProdutos" data-isCreate="0" data-json="{{json_encode($item)}}">Editar</a>
+                              <a class="dropdown-item" href="#" onclick="apagarProduto({{$item->id}})">Apagar</a>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
-                  @endforeach
+                        </td>
+                      </tr>
+                    @endforeach
+                  @endif
                 </tbody>
               </table>
             </div>
@@ -204,6 +210,22 @@
       });
       function isInt(n) {
         return n % 1 === 0;
+      }
+    </script>
+    <script>
+      function apagarProduto(id){
+        Swal.fire({
+          title: 'Você deseja realmente apagar esse produto?',
+          showCancelButton: true,
+          confirmButtonText: 'Apagar',
+          cancelButtonText: 'Cancelar Operação',
+        }).then((result) => {
+          if (result.value) {
+            window.location.href = "{{route('admin.produtos.apagar', '#')}}".replace('#',id);
+          } else {
+            Swal.fire('Nenhuma alteração feita!', '', 'info')
+          }
+        })
       }
     </script>
 @endpush

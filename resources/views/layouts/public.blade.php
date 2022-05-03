@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-lg-4 col-md-3 col-sm-4 row align-items-center one">
-                        <a href="index.html"><img src="{{asset('bootstrap/assets')}}/img/logo.svg" alt="BELEMGPS" class="img-fluid logo"></a>
+                        <a href="{{route('index')}}"><img src="{{asset('bootstrap/assets')}}/img/logo.svg" alt="BELEMGPS" class="img-fluid logo"></a>
                     </div>
                     <div class="col-lg-8 col-md-9 col-sm-8 two text-rigth"> 
                         <nav class="menu-mobile" onclick="toggleMenu()">
@@ -41,9 +41,9 @@
                             <div></div>
                         </nav>
                         <nav class="list-inline row align-items-center justify-content-right" id="toggle" style="justify-content: right;">
-                            <li class="list-inline-item active"><a href="">Lorem Ipsum</a></li>
-                            <li class="list-inline-item"><a href="">Lorem Ipsum</a></li>
-                            <li class="list-inline-item"><a href="">Lorem Ipsum</a></li>
+                            <li class="list-inline-item @if(isset($active) && $active == "home") active @endif"><a href="{{route('index')}}">HOME</a></li>
+                            <li class="list-inline-item @if(isset($active) && $active == "produtos") active @endif"><a href="{{route('produtos')}}">PRODUTOS</a></li>
+                            {{-- <li class="list-inline-item"><a href="">HOME</a></li> --}}
                         </nav>
                     </div>
                 </div>
@@ -143,6 +143,9 @@
     </footer>
     <script type="text/javascript" src="{{asset('bootstrap/assets')}}/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="{{asset('bootstrap/assets')}}/js/bootstrap.bundle.min.js"></script>
+    <!--  Plugin for Sweet Alert -->
+    <script src="{{ asset('material') }}/js/plugins/sweetalert2.js"></script>
     <script src="{{asset('bootstrap/assets')}}/js/script.js"></script>
+    @stack('js')
   </body>
 </html>

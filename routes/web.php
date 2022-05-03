@@ -16,7 +16,7 @@ Auth::routes();
 |
 */
 
-Route::get('/', 'PublicController@index');
+Route::get('/', 'PublicController@index')->name('index');
 Route::get('produtos', 'PublicController@produtos')->name('produtos');
 
 
@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
 		Route::get('produtos','ProdutosController@index')->name('admin.produtos');
 		Route::post('produtos/cadastrar','ProdutosController@cadastrar')->name('admin.produtos.cadastrar');
 		Route::post('produtos/{id}/atualizar','ProdutosController@atualizar')->name('admin.produtos.atualizar');
+		Route::get('produtos/{id}/','ProdutosController@apagar')->name('admin.produtos.apagar');
 	});
 });
 

@@ -54,16 +54,24 @@ class ProdutosController extends Controller
     /**
      * Verifica se tem imagem
      */
+    $array = $request->except('PROD_IMAGE');
     if ($request->hasFile('PROD_IMAGE')) {
       // Apagar produto 
       Storage::delete($produto->PROD_IMAGE);
       // Salvar novo produto
+      $array['PROD_IMAGE'] = $path;
       $path = $request->file('PROD_IMAGE')->store('public/produtos');
     }
-    $array = $request->except('PROD_IMAGE');
     $array['PROD_VALOR'] = str_replace(['.',','],['','.'],$array['PROD_VALOR']);
-    $array['PROD_IMAGE'] = $path;
     $produto->update($array);
     return redirect()->back()->with('sucesso','Produto atualizado com sucesso!');
+  }
+
+  public function apagar($id)
+  {
+    $produto = $this->produtosRepository->find($id);
+    Storage::delete($produto->PROD_IMAGE);
+    $produto->delete();
+    return redirect()->back()->with('sucesso','Produto apagado com sucesso!');
   }
 }
