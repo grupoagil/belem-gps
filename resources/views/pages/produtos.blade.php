@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'table', 'titlePage' => __('Table List')])
+@extends('layouts.app', ['activePage' => 'table', 'titlePage' => __('Produtos')])
 
 @push('css')
 <style type="text/css">
@@ -117,18 +117,18 @@
               <div class="row">
                 <div class="col-12">
                   <div class="form-group">
-                    <label>Nome do Produto</label>
+                    <label>Nome do Produto (Obrigatório)</label>
                     <input type="text" class="form-control" name="PROD_NOME" required>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label>Descrição do Produto</label>
+                    <label>Descrição do Produto (Obrigatório)</label>
                     <textarea class="form-control" rows="3" name="PROD_DESCRICAO" required></textarea>
                   </div>
                 </div>
                 <div class="col-12">
-                  <label>Imagem do Produto</label>
+                  <label>Imagem do Produto (Clique em Selecionar)</label>
                   <div class="form-group" style="text-align: -webkit-center;">
                     <div id="image-preview">
                       <label for="image-upload" id="image-label">Selecionar</label>
@@ -138,25 +138,25 @@
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label>Valor do Produto</label>
+                    <label>Valor do Produto (Formato 1.000,00)</label>
                     <input type="text" class="form-control money" name="PROD_VALOR">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label>Desconto do Produto</label>
+                    <label>Desconto do Produto (Percentual %)</label>
                     <input type="number" class="form-control" name="PROD_DESCONTO_CIELO">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label>Link Cielo</label>
+                    <label>Link Cielo (Link de compra da Cielo)</label>
                     <input type="text" class="form-control" name="PROD_LINK_CIELO">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
-                    <label>Link Magalu</label>
+                    <label>Link Magalu (Link de compra da Magalu)</label>
                     <input type="text" class="form-control" name="PROD_LINK_MAGALU">
                   </div>
                 </div>

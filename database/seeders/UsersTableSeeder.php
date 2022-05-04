@@ -16,9 +16,9 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Admin Admin',
-            'email' => 'admin@material.com',
+            'email' => 'admin@belemgps.com.br',
             'email_verified_at' => now(),
-            'password' => Hash::make('secret'),
+            'password' => Hash::make('z!D5V%Dr37'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
