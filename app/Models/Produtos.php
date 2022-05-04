@@ -27,7 +27,8 @@ class Produtos extends Model implements Transformable
         'PROD_VALOR',
         'PROD_DESCONTO_CIELO',
         'PROD_LINK_CIELO',
-        'PROD_LINK_MAGALU'
+        'PROD_LINK_MAGALU',
+        'PROD_VISIVEL'
     ];
 
 }

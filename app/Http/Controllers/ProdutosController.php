@@ -74,4 +74,19 @@ class ProdutosController extends Controller
     $produto->delete();
     return redirect()->back()->with('sucesso','Produto apagado com sucesso!');
   }
+
+  public function visibilidade($id)
+  {
+    $produto = $this->produtosRepository->find($id);
+    if ($produto->PROD_VISIVEL) {
+      $produto->update([
+        "PROD_VISIVEL" => false
+      ]);
+    }else{
+      $produto->update([
+        "PROD_VISIVEL" => true
+      ]);
+    }
+    return redirect()->back()->with('sucesso','Visibilidade do produto atualizado com sucesso!');
+  }
 }

@@ -63,6 +63,7 @@
                   <th>Descrição</th>
                   <th>Preço</th>
                   <th>Desconto</th>
+                  <th>Visibilidade</th>
                   <th class="text-right">Opções</th>
                 </thead>
                 <tbody>
@@ -78,6 +79,7 @@
                         <td>{{$item->PROD_DESCRICAO}}</td>
                         <td>{{$item->PROD_VALOR}}</td>
                         <td>{{$item->PROD_DESCONTO_CIELO}}</td>
+                        <td>{{($item->PROD_VISIVEL)?'Visível':'Não Visível'}}</td>
                         <td class="text-right">
                           <div class="dropdown">
                             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,6 +88,7 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalProdutos" data-isCreate="0" data-json="{{json_encode($item)}}">Editar</a>
                               <a class="dropdown-item" href="#" onclick="apagarProduto({{$item->id}})">Apagar</a>
+                              <a class="dropdown-item" href="#" onclick="alterarVisibilidade({{$item->id}})">{{($item->PROD_VISIVEL)?'Definir como Não Visível':'Definir como Visível'}}</a>
                             </div>
                           </div>
                         </td>
@@ -222,6 +225,21 @@
         }).then((result) => {
           if (result.value) {
             window.location.href = "{{route('admin.produtos.apagar', '#')}}".replace('#',id);
+          } else {
+            Swal.fire('Nenhuma alteração feita!', '', 'info')
+          }
+        })
+      }
+
+      function alterarVisibilidade(id) {
+        Swal.fire({
+          title: 'Você deseja realmente alterar a visibilidade?',
+          showCancelButton: true,
+          confirmButtonText: 'Alterar Visibilidade',
+          cancelButtonText: 'Cancelar Operação',
+        }).then((result) => {
+          if (result.value) {
+            window.location.href = "{{route('admin.produtos.visibilidade', '#')}}".replace('#',id);
           } else {
             Swal.fire('Nenhuma alteração feita!', '', 'info')
           }
