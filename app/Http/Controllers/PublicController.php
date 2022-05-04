@@ -24,7 +24,7 @@ class PublicController extends Controller
      */
     public function index()
     {
-        $produtos = $this->produtosRepository->limit(8);
+        $produtos = $this->produtosRepository->where('PROD_VISIVEL',1)->limit(8);
         return view('welcome', compact('produtos'));
     }
 
@@ -33,7 +33,7 @@ class PublicController extends Controller
      */
     public function produtos()
     {
-        $produtos = $this->produtosRepository->all();
+        $produtos = $this->produtosRepository->where('PROD_VISIVEL',1)->all();
         return view('produtos', compact('produtos'));
     }
 }
