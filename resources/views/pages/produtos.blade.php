@@ -118,13 +118,13 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label>Nome do Produto</label>
-                    <input type="text" class="form-control" name="PROD_NOME">
+                    <input type="text" class="form-control" name="PROD_NOME" required>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label>Descrição do Produto</label>
-                    <textarea class="form-control" rows="3" name="PROD_DESCRICAO"></textarea>
+                    <textarea class="form-control" rows="3" name="PROD_DESCRICAO" required></textarea>
                   </div>
                 </div>
                 <div class="col-12">
