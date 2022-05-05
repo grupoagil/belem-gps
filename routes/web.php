@@ -18,6 +18,7 @@ Auth::routes();
 
 Route::get('/', 'PublicController@index')->name('index');
 Route::get('produtos', 'PublicController@produtos')->name('produtos');
+Route::get('quemsomos', 'PublicController@quemsomos')->name('quemsomos');
 
 
 Route::group(['prefix' => 'admin'], function () {

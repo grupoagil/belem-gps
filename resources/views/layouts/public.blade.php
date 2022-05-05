@@ -42,6 +42,7 @@
                         </nav>
                         <nav class="list-inline row align-items-center justify-content-right" id="toggle" style="justify-content: right;">
                             <li class="list-inline-item @if(isset($active) && $active == "home") active @endif"><a href="{{route('index')}}">HOME</a></li>
+                            <li class="list-inline-item @if(isset($active) && $active == "quemsomos") active @endif"><a href="{{route('quemsomos')}}">QUEM SOMOS</a></li>
                             <li class="list-inline-item @if(isset($active) && $active == "produtos") active @endif"><a href="{{route('produtos')}}">PRODUTOS</a></li>
                             {{-- <li class="list-inline-item"><a href="">HOME</a></li> --}}
                         </nav>

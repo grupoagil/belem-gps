@@ -36,4 +36,12 @@ class PublicController extends Controller
         $produtos = $this->produtosRepository->where('PROD_VISIVEL',1)->get();
         return view('produtos', compact('produtos'));
     }
+
+    /**
+     * Quem Somos
+     */
+    public function quemsomos()
+    {
+      return view('quemsomos');
+    }
 }
