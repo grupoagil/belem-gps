@@ -7,20 +7,9 @@
   <section class="row main3">
       <div class="container">
           <div class="row justify-content-between align-items-center">
-              <div class="title-page">Quem Somos</div>
+              <div class="title-page">Nossa Equipe</div>
           </div>
           <div class="row">
-            <div class="col-12">
-              <p style="text-align: justify">
-                A Belemgps é uma empresa criada em 2012, especializada no comercio e execução de serviços ligados as áreas de Cartografia, 
-                Geoprocessamento, Topografia, Agrimensura, Licenciamento Fundiário e Ambiental. Tem um elenco de experientes profissionais 
-                que atuam multidisciplinar mente com vista a soluções rápidas e eficazes, além de ser a maior especialista do Norte do Brasil 
-                na comercialização de GPS.
-              </p>
-            </div>
-            <div class="col-12">
-              <hr>
-            </div>
             <div class="col-12">
               <h3>DIREÇÃO</h3>
               <b style="font-size: 1.2rem;">Magno Macedo</b> – Socio Diretor, Analista Master e Responsabilidade Técnica. <br/>

@@ -5,7 +5,6 @@
 @endphp
 
 @section('content')
-    
   <!-- MAIN -->
   <main>
       <!-- MAIN 1 -->
