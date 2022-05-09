@@ -16,7 +16,7 @@
             <div class="row">
                 @foreach ($produtos->toArray() as $item)
                 <div class="col-3" style="padding: unset;">
-                    <button class="btn p-4 gps-product" style="text-align: inherit;"
+                    <button class="btn p-4 gps-product" style="width: 100%;height: 100%;text-align: inherit;"
                         data-cielo="{{$item['PROD_LINK_CIELO']}}"
                         data-magalu="{{$item['PROD_LINK_MAGALU']}}"
                         data-descricao="{{$item['PROD_DESCRICAO']}}"
@@ -35,7 +35,7 @@
                                 <figcaption>{{$item['PROD_NOME']}}</figcaption>
                             </figure>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-bottom: 5rem;">
                             <div class="description-gps">{{substr($item['PROD_DESCRICAO'],0, 100)}}</div>
                         </div>
                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
@@ -43,7 +43,7 @@
                             <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                         </div>
                         @endif
-                        <div class="row justify-content-between align-items-center">
+                        <div class="row justify-content-between align-items-center" style="bottom: 1rem;position: absolute;">
                             @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
                             @else
