@@ -180,7 +180,7 @@
   </main>
   <!-- Modal Preview Produto -->
     <div class="modal fade" id="produtoPreview" tabindex="-1" role="dialog" aria-labelledby="produtoPreviewLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="produtoPreviewLabel">Preview Produto</h5>
@@ -194,7 +194,7 @@
                         <img src="" alt="Imagem do Produto" width="100%">
                     </div>
                     <div class="col-6">
-                        <div class="" id="descricao">
+                        <div class="" id="descricao" style="text-align: justify">
 
                         </div>
                     </div>
