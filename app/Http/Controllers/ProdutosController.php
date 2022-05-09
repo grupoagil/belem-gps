@@ -39,8 +39,11 @@ class ProdutosController extends Controller
      */
     if (!$request->hasFile('PROD_IMAGE')) {
       return redirect()->back()->with('falha','Adicione uma imagem');
+    }else{
+      // Salvar novo produto
+      $path = $request->file('PROD_IMAGE')->store('public/produtos');
+      $array['PROD_IMAGE'] = $path;
     }
-
     /**
      * Salva a imagem
      */
