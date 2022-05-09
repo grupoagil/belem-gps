@@ -99,7 +99,7 @@
                                                 <figcaption>{{$item['PROD_NOME']}}</figcaption>
                                             </figure>
                                         </div>
-                                        <div class="row">
+                                        <div class="row" style="margin-bottom: 5rem;">
                                             <div class="description-gps">{{substr($item['PROD_DESCRICAO'],0, 100)}}</div>
                                         </div>
                                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
