@@ -125,34 +125,40 @@
                     <div class="carousel-item">
                         <div class="row">
                             @foreach (array_chunk($produtos->toArray(),4)[1] as $item)
-                            <div class="col p-4 gps-product">
-                                <div class="row justify-content-between align-items-center">
+                            <div class="col" style="padding: unset;">
+                                <button class="btn p-4 gps-product" style="width: 100%;height: 100%;text-align: inherit;"
+                                    data-cielo="{{$item['PROD_LINK_CIELO']}}"
+                                    data-magalu="{{$item['PROD_LINK_MAGALU']}}"
+                                    data-descricao="{{$item['PROD_DESCRICAO']}}"
+                                    data-desconto="{{$item['PROD_DESCONTO_CIELO']}}">
+                                    <div class="row justify-content-between align-items-center">
+                                        @if ($item['PROD_DESCONTO_CIELO'] != 0)
+                                            <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>
+                                        @endif
+                                    </div>
+                                    <div class="row">
+                                        <figure class="figure">
+                                            <img src="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}" alt="GPS" class="img-fluid">
+                                            <figcaption>{{$item['PROD_NOME']}}</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="row">
+                                        <div class="description-gps">{{substr($item['PROD_DESCRICAO'],0, 100)}}</div>
+                                    </div>
                                     @if ($item['PROD_DESCONTO_CIELO'] != 0)
-                                        <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>
+                                    <div class="row">
+                                        <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
+                                    </div>
                                     @endif
-                                </div>
-                                <div class="row">
-                                    <figure class="figure">
-                                        <img src="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}" alt="GPS" class="img-fluid">
-                                        <figcaption>{{$item['PROD_NOME']}}</figcaption>
-                                    </figure>
-                                </div>
-                                <div class="row">
-                                    <div class="description-gps">{{substr($item['PROD_DESCRICAO'],0, 100)}}</div>
-                                </div>
-                                @if ($item['PROD_DESCONTO_CIELO'] != 0)
-                                <div class="row">
-                                    <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
-                                </div>
-                                @endif
-                                <div class="row justify-content-between align-items-center">
-                                    @if ($item['PROD_DESCONTO_CIELO'] != 0)
-                                        <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
-                                    @else
-                                        <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
-                                    @endif
-                                    <button class="btn btn-secundary carrinho" data-cielo="{{$item['PROD_LINK_CIELO']}}" data-magalu="{{$item['PROD_LINK_MAGALU']}}" data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button>
-                                </div>
+                                    <div class="row justify-content-between align-items-center">
+                                        @if ($item['PROD_DESCONTO_CIELO'] != 0)
+                                            <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
+                                        @else
+                                            <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
+                                        @endif
+                                        {{-- <button class="btn btn-secundary carrinho" data-cielo="{{$item['PROD_LINK_CIELO']}}" data-magalu="{{$item['PROD_LINK_MAGALU']}}" data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button> --}}
+                                    </div>
+                                </button>
                             </div>
                         @endforeach
                         </div>
