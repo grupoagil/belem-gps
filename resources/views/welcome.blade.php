@@ -202,8 +202,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Cielo</button>
-                <button type="button" class="btn btn-danger">Magalu</button>
+                <a href="#" class="btn btn-primary">Cielo</a>
+                <a href="#" class="btn btn-danger">Magalu</a>
             </div>
         </div>
         </div>
@@ -239,12 +239,16 @@
             var imagem = button.data('imagem') // Extract info from data-* attributes
             var titulo = button.data('titulo')
             var descricao = button.data('descricao')
+            var cielo = button.data('cielo')
+            var magalu = button.data('magalu')
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this)
             modal.find('.modal-title').text(titulo)
             modal.find('img').attr('src',imagem)
             modal.find('#descricao').text(descricao);
+            modal.find('.btn-primary').attr('href',cielo)
+            modal.find('.btn-danger').attr('href',magalu)
         })
     </script>
 @endpush
