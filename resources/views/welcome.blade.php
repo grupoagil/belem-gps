@@ -107,7 +107,7 @@
                                             <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                         </div>
                                         @endif
-                                        <div class="row justify-content-between align-items-center" style="margin-top: 100%;">
+                                        <div class="row justify-content-between align-items-center" style="bottom: 1rem;position: absolute;">
                                             @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
                                             @else
