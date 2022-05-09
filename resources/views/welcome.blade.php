@@ -83,7 +83,7 @@
                         @if ($produtos->count()>0)
                             @foreach (array_chunk($produtos->toArray(),4)[0] as $item)
                                 <div class="col" style="padding: unset;">
-                                    <button class="btn p-4 gps-product" style="width: 100%;"
+                                    <button class="btn p-4 gps-product" style="width: 100%;height: 100%;text-align: inherit;"
                                         data-cielo="{{$item['PROD_LINK_CIELO']}}"
                                         data-magalu="{{$item['PROD_LINK_MAGALU']}}"
                                         data-descricao="{{$item['PROD_DESCRICAO']}}"
@@ -107,7 +107,7 @@
                                             <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                         </div>
                                         @endif
-                                        <div class="row justify-content-between align-items-center">
+                                        <div class="row justify-content-between align-items-center" style="margin-top: 100%;">
                                             @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
                                             @else
