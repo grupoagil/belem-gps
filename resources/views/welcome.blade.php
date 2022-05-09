@@ -82,7 +82,7 @@
                     <div class="row">
                         @if ($produtos->count()>0)
                             @foreach (array_chunk($produtos->toArray(),4)[0] as $item)
-                                <div class="col-3" style="padding: unset;">
+                                <div class="col" style="padding: unset;">
                                     <button class="btn p-4 gps-product" style="width: 100%;"
                                         data-cielo="{{$item['PROD_LINK_CIELO']}}"
                                         data-magalu="{{$item['PROD_LINK_MAGALU']}}"
