@@ -202,8 +202,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <a href="#" class="btn btn-primary">Cielo</a>
-                <a href="#" class="btn btn-danger">Magalu</a>
+                <a href="#" target="_blank" class="btn btn-primary">Cielo</a>
+                <a href="#" target="_blank" class="btn btn-danger">Magalu</a>
             </div>
         </div>
         </div>
