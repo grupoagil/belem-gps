@@ -95,7 +95,7 @@
                                         </figure>
                                     </div>
                                     <div class="row">
-                                        <div class="description-gps">{{$item['PROD_DESCRICAO']}}</div>
+                                        <div class="description-gps">{{substr($item['PROD_DESCRICAO'],0, 100)}}</div>
                                     </div>
                                     @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                     <div class="row">
