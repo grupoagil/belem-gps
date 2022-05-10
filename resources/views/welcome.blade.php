@@ -102,13 +102,14 @@
                                             <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                         </div>
                                         @endif
-                                        <div class="row justify-content-between align-items-center" style="bottom: 1rem;position: absolute;">
+                                        <div class="row justify-content-between align-items-center" style="bottom: 1rem;position: absolute;width: 100%;">
                                             @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
                                             @else
                                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                             @endif
                                             <button class="btn btn-secundary carrinho"
+                                            style="right: 1px;"
                                             data-cielo="{{$item['PROD_LINK_CIELO']}}"
                                             data-magalu="{{$item['PROD_LINK_MAGALU']}}"
                                             data-descricao="{{$item['PROD_DESCRICAO']}}"
@@ -146,13 +147,14 @@
                                         <div class="price-del-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                     </div>
                                     @endif
-                                    <div class="row justify-content-between align-items-center" style="bottom: 1rem;position: absolute;">
+                                    <div class="row justify-content-between align-items-center" style="bottom: 1rem;position: absolute;width: 100%;">
                                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                             <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'] - ($item['PROD_VALOR'] / 100 * $item['PROD_DESCONTO_CIELO']), "BRL")}}</div>
                                         @else
                                             <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                         @endif
-                                        <button class="btn" style="width: 100%;height: 100%;text-align: inherit;"
+                                        <button class="btn btn-secundary carrinho"
+                                            style="right: 1px;"
                                             data-cielo="{{$item['PROD_LINK_CIELO']}}"
                                             data-magalu="{{$item['PROD_LINK_MAGALU']}}"
                                             data-descricao="{{$item['PROD_DESCRICAO']}}"
