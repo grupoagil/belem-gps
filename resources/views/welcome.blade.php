@@ -109,14 +109,14 @@
                                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                             @endif
                                             <button class="btn btn-secundary carrinho"
-                                            style="right: 1rem;"
+                                            style="right: 1px; margin-right: 1rem;"
                                             data-cielo="{{$item['PROD_LINK_CIELO']}}"
                                             data-magalu="{{$item['PROD_LINK_MAGALU']}}"
                                             data-descricao="{{$item['PROD_DESCRICAO']}}"
                                             data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"
                                             data-imagem="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}"
                                             data-titulo="{{$item['PROD_NOME']}}"
-                                            data-toggle="modal" data-target="#produtoPreview"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button>
+                                            data-toggle="modal" data-target="#produtoPreview"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"> Comprar</button>
                                         </div>
                                 </div>
                             @endforeach
