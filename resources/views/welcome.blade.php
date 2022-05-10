@@ -82,15 +82,7 @@
                     <div class="row">
                         @if ($produtos->count()>0)
                             @foreach (array_chunk($produtos->toArray(),4)[0] as $item)
-                                <div class="col" style="padding: unset;">
-                                    <button class="btn p-4 gps-product" style="width: 100%;height: 100%;text-align: inherit;"
-                                        data-cielo="{{$item['PROD_LINK_CIELO']}}"
-                                        data-magalu="{{$item['PROD_LINK_MAGALU']}}"
-                                        data-descricao="{{$item['PROD_DESCRICAO']}}"
-                                        data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"
-                                        data-imagem="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}"
-                                        data-titulo="{{$item['PROD_NOME']}}"
-                                        data-toggle="modal" data-target="#produtoPreview">
+                                <div class="col p-4 gps-product">
                                         <div class="row justify-content-between align-items-center">
                                             @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                                 <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>
@@ -116,9 +108,15 @@
                                             @else
                                                 <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                             @endif
-                                            {{-- <button class="btn btn-secundary carrinho" data-cielo="{{$item['PROD_LINK_CIELO']}}" data-magalu="{{$item['PROD_LINK_MAGALU']}}" data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button> --}}
+                                            <button class="btn btn-secundary carrinho"
+                                            data-cielo="{{$item['PROD_LINK_CIELO']}}"
+                                            data-magalu="{{$item['PROD_LINK_MAGALU']}}"
+                                            data-descricao="{{$item['PROD_DESCRICAO']}}"
+                                            data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"
+                                            data-imagem="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}"
+                                            data-titulo="{{$item['PROD_NOME']}}"
+                                            data-toggle="modal" data-target="#produtoPreview"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button>
                                         </div>
-                                    </button>
                                 </div>
                             @endforeach
                         @endif
@@ -128,15 +126,7 @@
                     <div class="carousel-item">
                         <div class="row">
                             @foreach (array_chunk($produtos->toArray(),4)[1] as $item)
-                            <div class="col" style="padding: unset;">
-                                <button class="btn p-4 gps-product" style="width: 100%;height: 100%;text-align: inherit;"
-                                    data-cielo="{{$item['PROD_LINK_CIELO']}}"
-                                    data-magalu="{{$item['PROD_LINK_MAGALU']}}"
-                                    data-descricao="{{$item['PROD_DESCRICAO']}}"
-                                    data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"
-                                    data-imagem="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}"
-                                    data-titulo="{{$item['PROD_NOME']}}"
-                                    data-toggle="modal" data-target="#produtoPreview">
+                            <div class="col p-4 gps-product" style="padding: unset;">
                                     <div class="row justify-content-between align-items-center">
                                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                             <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>
@@ -162,9 +152,15 @@
                                         @else
                                             <div class="price-gps">{{$formatter->formatCurrency($item['PROD_VALOR'], "BRL")}}</div>
                                         @endif
-                                        {{-- <button class="btn btn-secundary carrinho" data-cielo="{{$item['PROD_LINK_CIELO']}}" data-magalu="{{$item['PROD_LINK_MAGALU']}}" data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button> --}}
+                                        <button class="btn" style="width: 100%;height: 100%;text-align: inherit;"
+                                            data-cielo="{{$item['PROD_LINK_CIELO']}}"
+                                            data-magalu="{{$item['PROD_LINK_MAGALU']}}"
+                                            data-descricao="{{$item['PROD_DESCRICAO']}}"
+                                            data-desconto="{{$item['PROD_DESCONTO_CIELO']}}"
+                                            data-imagem="{{asset(str_replace('public','storage',$item['PROD_IMAGE']))}}"
+                                            data-titulo="{{$item['PROD_NOME']}}"
+                                            data-toggle="modal" data-target="#produtoPreview"><img src="{{asset('bootstrap/assets')}}/img/icons/cart-plus.svg" alt="heart-plus"></button>
                                     </div>
-                                </button>
                             </div>
                         @endforeach
                         </div>
