@@ -208,28 +208,6 @@
 
 @push('js')
     <script>
-        $('.carrinho').click((event)=>{
-            var button = $(event.currentTarget);
-            var desconto = button.data('desconto');
-            var cielo = button.data('cielo');
-            var magalu = button.data('magalu');
-            Swal.fire({
-                title: 'Escolha onde comprar',
-                showCancelButton: true,
-                showDenyButton: true,
-                confirmButtonText: (desconto != 0)?'Cielo (-'+desconto+'% Desconto)':'Cielo',
-                denyButtonText: (desconto != 0)?'Magalu (Sem Desconto)':'Magalu',
-                cancelButtonText: 'Fechar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = cielo;
-                } else if (result.isDenied) {
-                    window.location.href = magalu;
-                }
-            })
-        })
-    </script>
-    <script>
         $('#produtoPreview').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var imagem = button.data('imagem') // Extract info from data-* attributes
