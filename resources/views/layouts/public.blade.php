@@ -56,7 +56,7 @@
                 <div class="container">
                     <div class="row align-items-end">
                         <div class="col-lg-7 col-md-12 banner-product">
-                            <div class="banner-product-title" style="margin-bottom: 1rem; text-transform:uppercase;">Quem somos</div>
+                            <div class="banner-product-title" style="margin-bottom: 1rem; text-transform:uppercase;">Quem somos ?</div>
                             <div class="banner-product-content" style="font-size: 1rem; text-align: justify; margin-bottom: 1rem">A Belemgps é uma empresa criada em 2012, especializada no comércio e execução de serviços ligados as áreas de Cartografia, Geoprocessamento, Topografia, Agrimensura, Licenciamento Fundiário e Ambiental. Tem um elenco de experientes profissionais que atuam multidisciplinar mente com vista a soluções rápidas e eficazes, além de ser a maior especialista do Norte do Brasil na comercialização de GPS.</div>
                             <a href="{{route('quemsomos')}}" class="banner-product-button">Nossa equipe!</a>
                         </div>
