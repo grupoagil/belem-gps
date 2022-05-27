@@ -44,4 +44,12 @@ class PublicController extends Controller
     {
       return view('quemsomos');
     }
+    
+    /**
+     * Serviços
+     */
+    public function servicos()
+    {
+      return view('servicos');
+    }
 }

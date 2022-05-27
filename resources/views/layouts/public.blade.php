@@ -16,10 +16,10 @@
         <section class="top-bar1">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="row justify-content-center align-items-center top-location">
+                    {{-- <div class="row justify-content-center align-items-center top-location">
                         <div class="icon"><img src="{{asset('bootstrap/assets')}}/img/icons/location.svg" alt="location"></div>
                         <div class="top-bar-location-text">Lorem, ipsum...</div>
-                    </div>
+                    </div> --}}
                     <div class="row justify-content-center align-items-center top-call">
                         <div class="icon"><img src="{{asset('bootstrap/assets')}}/img/icons/call.svg" alt="location"></div>
                         <div class="top-bar-call-text">91 99143-2899</div>
@@ -43,8 +43,8 @@
                         <nav class="list-inline row align-items-center justify-content-right" id="toggle" style="justify-content: right;">
                             <li class="list-inline-item @if(isset($active) && $active == "home") active @endif"><a href="{{route('index')}}">HOME</a></li>
                             <li class="list-inline-item @if(isset($active) && $active == "quemsomos") active @endif"><a href="{{route('quemsomos')}}">QUEM SOMOS</a></li>
+                            <li class="list-inline-item @if(isset($active) && $active == "servicos") active @endif"><a href="{{route('servicos')}}">SERVIÇOS</a></li>
                             <li class="list-inline-item @if(isset($active) && $active == "produtos") active @endif"><a href="{{route('produtos')}}">PRODUTOS</a></li>
-                            {{-- <li class="list-inline-item"><a href="">HOME</a></li> --}}
                         </nav>
                     </div>
                 </div>

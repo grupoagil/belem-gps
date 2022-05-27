@@ -8,7 +8,7 @@
   <!-- MAIN -->
   <main>
       <!-- MAIN 1 -->
-      <section class="row main1">
+      {{-- <section class="row main1">
           <div class="container">
               <div class="row">
                   <div class="col-lg-4 col-md-12">
@@ -35,23 +35,23 @@
                   </div>
               </div>
           </div>
-      </section>
+      </section> --}}
       <!-- MAIN 2 -->
       <section class="row main2">
           <div class="container">
               <div class="row justify-content-center">
                   <div class="col-lg-4 col-md-12">
                       <div class="title-page">Serviços</div>
-                      <div class="main-content">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
-                      <small>Lorem Ipsum</small>
+                      {{-- <div class="main-content">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+                      <small>Lorem Ipsum</small> --}}
                       <nav class="list-unstyled">
-                          <li><a href="">Lorem Ipsum</a></li>
-                          <li><a href="">Lorem Ipsum</a></li>
-                          {{-- <li><a href="">Lorem Ipsum</a></li>
-                          <li><a href="">Lorem Ipsum</a></li>
-                          <li><a href="">Lorem Ipsum</a></li>
-                          <li><a href="">Lorem Ipsum</a></li> --}}
-                          <a href="" class="arrow">Saiba mais</a>
+                          <li>• Análise de Plano de Manejo Florestal</li>
+                          <li>• Revendedor de Drones DJI</li>
+                          <li>• Laudos Técnicos de Cobertura e Uso da Terra</li>
+                          <li>• Regularização Fundiária e Ambiental</li>
+                          <li>• Ativação de CAR e Aprovação de Reserva Legal</li>
+                          <li>• Desembargos no IBAMA, ICMbio e Secretarias</li>
+                          <a href="{{route('servicos')}}" class="arrow">Saiba mais</a>
                       </nav>
                   </div>
                   <div class="col-lg-4 col-md-6 row align-items-end">
