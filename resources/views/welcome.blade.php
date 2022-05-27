@@ -82,7 +82,7 @@
                     <div class="row">
                         @if ($produtos->count()>0)
                             @foreach (array_chunk($produtos->toArray(),4)[0] as $item)
-                                <div class="col p-4 gps-product">
+                                <div class="col-12 col-md-3 p-4 gps-product">
                                     <div class="row justify-content-between align-items-center">
                                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                             <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>
@@ -127,7 +127,7 @@
                     <div class="carousel-item">
                         <div class="row">
                             @foreach (array_chunk($produtos->toArray(),4)[1] as $item)
-                            <div class="col p-4 gps-product">
+                            <div class="col-12 col-md-3 p-4 gps-product">
                                     <div class="row justify-content-between align-items-center">
                                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
                                             <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>

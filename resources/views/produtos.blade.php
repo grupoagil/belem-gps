@@ -15,7 +15,7 @@
             </div>
             <div class="row">
                 @foreach ($produtos->toArray() as $item)
-                <div class="col-3 p-4 gps-product">
+                <div class="col-12 col-md-3 p-4 gps-product">
                     <div class="row justify-content-between align-items-center">
                         @if ($item['PROD_DESCONTO_CIELO'] != 0)
                             <div class="percent">-{{$item['PROD_DESCONTO_CIELO']}}%</div>
