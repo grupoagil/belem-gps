@@ -234,7 +234,7 @@ body {
 }
 
 .main2 nav.list-unstyled li {
-    margin-bottom: 2.0625rem;
+    margin-bottom: 1.0625rem;
 }
 
 .main2 nav.list-unstyled li:last-child {
@@ -243,7 +243,7 @@ body {
 
 .main2 nav.list-unstyled li a {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--font-gray2);
 }
 
