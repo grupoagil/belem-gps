@@ -10,7 +10,26 @@
               <div class="title-page">Serviços</div>
           </div>
           <div class="row">
-            <div class="col-12">
+            <div class="col-8" style="margin-inline: auto;">
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  @for ($i = 1; $i <= 8; $i++)
+                    <div class="carousel-item @if($i == 1) active @endif">
+                      <img class="d-block w-100" src="{{asset('belemgps')}}/foto{{$i}}.jpeg" alt="Fotos de Serviços" style="height: 50%">
+                    </div>
+                  @endfor
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 mt-5 pt-5">
               <h3>Análise de Plano de Manejo Florestal</h3>
               <p style="text-align: justify;margin-top:2rem;">
                 Manejo florestal consiste na exploração de madeira de forma seletiva com base no inventário florestal, a análise do plano tem por objetivo verificar e monitorar os dados da exploração e reportar possíveis inconsistência dos dados para que não afete o volume licenciado, assim como o monitoramento da cobertura florestal. Realizamos também levantamentos, de com uso de ferramentas de geoprocessamento, de áreas potenciais e operacionais para o planejamento de PMFS com análise temporal da cobertura do solo. 
