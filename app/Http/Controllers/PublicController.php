@@ -24,7 +24,7 @@ class PublicController extends Controller
      */
     public function index()
     {
-        $produtos = $this->produtosRepository->where('PROD_VISIVEL',1)->whereIn('id', [5,8,11,12])->get();
+        $produtos = $this->produtosRepository->where('PROD_VISIVEL',1)->whereIn('id', [1,8,11,12])->get();
         return view('welcome', compact('produtos'));
     }
 
