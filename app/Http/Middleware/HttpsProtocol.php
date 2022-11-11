@@ -16,7 +16,7 @@ class HttpsProtocol
      */
     public function handle(Request $request, Closure $next)
     {
-        dd($_SERVER["SERVER_PROTOCOL"]);
+        dd($_SERVER);
         return $next($request);
     }
 }
