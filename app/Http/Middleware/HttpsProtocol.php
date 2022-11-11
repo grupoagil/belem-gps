@@ -16,7 +16,7 @@ class HttpsProtocol
      */
     public function handle(Request $request, Closure $next)
     {
-        dd($request->secure());
+        dd($_SERVER['HTTPS']);
         return $next($request);
     }
 }
