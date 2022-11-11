@@ -16,7 +16,10 @@ class HttpsProtocol
      */
     public function handle(Request $request, Closure $next)
     {
-        dd($_SERVER);
+        if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == "http") {
+            return redirect()->secure($request->getRequestUri());
+         }
+
         return $next($request);
     }
 }
